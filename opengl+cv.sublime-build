@@ -1,0 +1,13 @@
+{
+    "cmd": ["g++ $file -o $file_base_name -L/usr/local/lib -lglut -lGL -lGLU, '-I/usr/local/include' `pkg-config --cflags --libs opencv`", "-std=c++11"],
+    "shell": true,
+    "selector": "main.cpp",
+    "variants":
+    [
+        {
+            "name": "Run",
+            "cmd": "g++ $file -o $file_base_name -L/usr/local/lib -lglut -lGL -lGLU '-I/usr/local/include' `pkg-config --cflags --libs opencv` && ${file_path}/./${file_base_name}",
+            "shell": true
+        }
+    ]
+}

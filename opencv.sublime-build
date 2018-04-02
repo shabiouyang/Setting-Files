@@ -1,0 +1,11 @@
+{
+    "cmd": ["bash", "-c", "g++ '$file' -o '$file_base_name' '-I/usr/local/include' `pkg-config --cflags --libs opencv`", "-std=c++11"],
+    "selector": "source.c++",
+    "variants":
+    [
+        {
+            "name": "Run",
+            "cmd": ["bash", "-c", "g++ '$file' -o '$file_base_name'  '-I/usr/local/include' `pkg-config --cflags --libs opencv` &&  \"${file_path}/${file_base_name}\" "  ], 
+        }
+    ]
+}
